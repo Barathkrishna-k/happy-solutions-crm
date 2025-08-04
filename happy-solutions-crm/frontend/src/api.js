@@ -1,7 +1,8 @@
 import axios from "axios";
 
 // Replace with your deployed backend API base URL
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
+const BASE_URL = 'https://happy-solutions-crm.onrender.com';
+
 
 const api = axios.create({
   baseURL: `${API_BASE}/api`,
@@ -15,3 +16,4 @@ api.interceptors.request.use((config) => {
 });
 
 export default api;
+
