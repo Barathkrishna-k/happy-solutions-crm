@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: happy-backend
+    env: python
+    plan: free
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "python backend/app.py"
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_DEBUG
+        value: 0
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        value: mongodb+srv://happysolutions2025:Happy@2025@happy-solutions-crm.vjtd7nl.mongodb.net/?retryWrites=true&w=majority&appName=Happy-Solutions-CRM
+      - key: MONGO_DB
+        value: happy_crm
+      - key: JWT_SECRET
+        value: your_secure_key_here
+      - key: RAZORPAY_KEY_ID
+        value: dummy_key
+      - key: RAZORPAY_KEY_SECRET
+        value: dummy_secret
+      - key: FRONTEND_ORIGIN
+        value: https://your-netlify-app.netlify.app
